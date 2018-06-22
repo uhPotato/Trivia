@@ -91,9 +91,49 @@ $(document).ready(function() {
         correctMedia: "assets/images/correct.jpg",
         incorrectMedia: "assets/images/incorrect.jpg"
     }
+
+    var question10 = {
+        question: "What is the name of the Firefly class ship that Mal is Captain of?",
+        answers: ["Serenity", "Aurora", "Cutlass", "Reaver"],
+        correctAnswer: 0,
+        correctMedia: "assets/images/correct.jpg",
+        incorrectMedia: "assets/images/incorrect.jpg"
+    }
+
+    var question11 = {
+        question: 'From the Animatrix series, Who said: "You have stepped to the edge of the looking glass."?',
+        answers: ["Kid", "Trinity", "Neo", "Morpheus"],
+        correctAnswer: 1,
+        correctMedia: "assets/images/correct.jpg",
+        incorrectMedia: "assets/images/incorrect.jpg"
+    }
+
+    var question12 = {
+        question: "What candy does Dustin feed the demo-dog in Stranger Things?",
+        answers: ["Butterfinger", "Hershey's", "Three Muskateers", "Snickers"],
+        correctAnswer: 2,
+        correctMedia: "assets/images/correct.jpg",
+        incorrectMedia: "assets/images/incorrect.jpg"
+    }
+
+    var question13 = {
+        question: "What is the name Dustin gives the demigorgon from Stranger Things?",
+        answers: ["D'Artagnan", "Mind Flayer", "Yoda", "Beholder"],
+        correctAnswer: 0,
+        correctMedia: "assets/images/correct.jpg",
+        incorrectMedia: "assets/images/incorrect.jpg"
+    }
+
+    var question14 = {
+        question: "Which epic monster from D&D doesn't technically sleep, but can dream things into reality?",
+        answers: ["Illithid ;)", "Aboleth", "Mind Flayer", "Beholder"],
+        correctAnswer: 3,
+        correctMedia: "assets/images/correct.jpg",
+        incorrectMedia: "assets/images/incorrect.jpg"
+    }
     
     // define array of all the question objects
-    var allQuestionsArray = [question0, question1, question2, question3, question4, question5, question6, question7, question8, question9];
+    var allQuestionsArray = [question0, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, question11, question12, question13, question14];
     
     // define object containing ongoing game variables 
     var gameVariables = {
@@ -144,9 +184,7 @@ $(document).ready(function() {
     function displayQuestion() {
         console.log("playGame function reached");
     
-        // when user is guessing start music playing
-        audio = new Audio("assets/sounds/jeopardy-theme-song.mp3");
-        audio.play();
+        
     
         // hide startButton and startOverButton and checkAnswer div
         $("#startButton").hide();
@@ -300,15 +338,18 @@ $(document).ready(function() {
     
     $("#startOverButton").on("click", function() {
         resetVariables();
-        audio.pause();
+        
         displayQuestion();
     });
     
     $(".options").on("click", function() {
         userGuess = $(this);
-        audio.pause();
+        
         checkSelection();
     });
     
     // end document.ready function
     });
+
+
+  
